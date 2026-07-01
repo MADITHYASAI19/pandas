@@ -1,0 +1,4 @@
+pip install pandas openpyxl requests
+python attendance_tool/generate_sample_data.py
+python attendance_tool/populate_database.py
+python -m http.server 8000 --directory attendance_tool/frontend
