@@ -1,0 +1,455 @@
+{
+  "generated_at": "2026-06-30T17:45:33.780514",
+  "sessions_meta": [
+    {
+      "date": "2026-07-01",
+      "title": "Evening Session"
+    },
+    {
+      "date": "2026-07-01",
+      "title": "Morning Session"
+    },
+    {
+      "date": "2026-07-02",
+      "title": "Evening Session"
+    },
+    {
+      "date": "2026-07-02",
+      "title": "Morning Session"
+    },
+    {
+      "date": "2026-07-03",
+      "title": "Evening Session"
+    },
+    {
+      "date": "2026-07-03",
+      "title": "Morning Session"
+    },
+    {
+      "date": "2026-07-04",
+      "title": "Evening Session"
+    },
+    {
+      "date": "2026-07-04",
+      "title": "Morning Session"
+    }
+  ],
+  "students": [
+    {
+      "enrollment_no": "ENR-001",
+      "name": "Aarav Patel",
+      "department": "CS",
+      "division": "A",
+      "roll_number": "CS-101",
+      "sessions": [
+        {
+          "date": "2026-07-01",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-01",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Evening Session",
+          "status": "leave"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Morning Session",
+          "status": "present"
+        }
+      ],
+      "present_count": 7,
+      "total_sessions": 8,
+      "attendance_pct": 87.5
+    },
+    {
+      "enrollment_no": "ENR-002",
+      "name": "Diya Sharma",
+      "department": "CS",
+      "division": "A",
+      "roll_number": "CS-102",
+      "sessions": [
+        {
+          "date": "2026-07-01",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-01",
+          "title": "Morning Session",
+          "status": "absent"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Morning Session",
+          "status": "present"
+        }
+      ],
+      "present_count": 7,
+      "total_sessions": 8,
+      "attendance_pct": 87.5
+    },
+    {
+      "enrollment_no": "ENR-003",
+      "name": "Vihaan Iyer",
+      "department": "IT",
+      "division": "A",
+      "roll_number": "IT-201",
+      "sessions": [
+        {
+          "date": "2026-07-01",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-01",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Evening Session",
+          "status": "leave"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Morning Session",
+          "status": "present"
+        }
+      ],
+      "present_count": 7,
+      "total_sessions": 8,
+      "attendance_pct": 87.5
+    },
+    {
+      "enrollment_no": "ENR-004",
+      "name": "Ananya Rao",
+      "department": "IT",
+      "division": "A",
+      "roll_number": "IT-202",
+      "sessions": [
+        {
+          "date": "2026-07-01",
+          "title": "Evening Session",
+          "status": "absent"
+        },
+        {
+          "date": "2026-07-01",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Evening Session",
+          "status": "absent"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Morning Session",
+          "status": "absent"
+        }
+      ],
+      "present_count": 5,
+      "total_sessions": 8,
+      "attendance_pct": 62.5
+    },
+    {
+      "enrollment_no": "ENR-005",
+      "name": "Arjun Nair",
+      "department": "ECE",
+      "division": "B",
+      "roll_number": "ECE-301",
+      "sessions": [
+        {
+          "date": "2026-07-01",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-01",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Morning Session",
+          "status": "present"
+        }
+      ],
+      "present_count": 8,
+      "total_sessions": 8,
+      "attendance_pct": 100.0
+    },
+    {
+      "enrollment_no": "ENR-006",
+      "name": "Ishita Joshi",
+      "department": "ECE",
+      "division": "B",
+      "roll_number": "ECE-302",
+      "sessions": [
+        {
+          "date": "2026-07-01",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-01",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Evening Session",
+          "status": "absent"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Morning Session",
+          "status": "leave"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Morning Session",
+          "status": "present"
+        }
+      ],
+      "present_count": 6,
+      "total_sessions": 8,
+      "attendance_pct": 75.0
+    },
+    {
+      "enrollment_no": "ENR-007",
+      "name": "Kabir Verma",
+      "department": "ME",
+      "division": "B",
+      "roll_number": "ME-401",
+      "sessions": [
+        {
+          "date": "2026-07-01",
+          "title": "Evening Session",
+          "status": "leave"
+        },
+        {
+          "date": "2026-07-01",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Morning Session",
+          "status": "leave"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Morning Session",
+          "status": "present"
+        }
+      ],
+      "present_count": 6,
+      "total_sessions": 8,
+      "attendance_pct": 75.0
+    },
+    {
+      "enrollment_no": "ENR-008",
+      "name": "Saanvi Reddy",
+      "department": "ME",
+      "division": "B",
+      "roll_number": "ME-402",
+      "sessions": [
+        {
+          "date": "2026-07-01",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-01",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-02",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-03",
+          "title": "Morning Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Evening Session",
+          "status": "present"
+        },
+        {
+          "date": "2026-07-04",
+          "title": "Morning Session",
+          "status": "present"
+        }
+      ],
+      "present_count": 8,
+      "total_sessions": 8,
+      "attendance_pct": 100.0
+    }
+  ]
+}

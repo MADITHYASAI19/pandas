@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Attendance Reconciliation Tool — training session attendance tracking by department, division, and enrollment number.">
+  <title>Attendance Reconciliation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">AR</span>
+        <div class="brand-text">
+          <h1>Attendance Reconciliation</h1>
+          <p id="brandSub" class="brand-sub">Loading roster&hellip;</p>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41">
+            </path>
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <section class="stats-row" aria-label="Summary statistics" id="statsRow">
+      <div class="stat-card" id="cardStudents">
+        <span class="stat-label">Students</span>
+        <span class="stat-value" id="statTotal">&ndash;</span>
+      </div>
+      <div class="stat-card" id="cardSessions">
+        <span class="stat-label">Sessions tracked</span>
+        <span class="stat-value" id="statSessions">&ndash;</span>
+      </div>
+      <div class="stat-card stat-card--good" id="cardAvg">
+        <span class="stat-label">Avg. attendance</span>
+        <span class="stat-value" id="statAvg">&ndash;</span>
+      </div>
+      <div class="stat-card stat-card--warn" id="cardLow">
+        <span class="stat-label">Below 75%</span>
+        <span class="stat-value" id="statLow">&ndash;</span>
+      </div>
+    </section>
+
+    <section class="upload-section" aria-label="Upload Center">
+      <div class="upload-card">
+        <div class="upload-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </div>
+        <div class="upload-content">
+          <h3>1. Regular Class Roster</h3>
+          <p>Import multi-sheet roster Excel workbook</p>
+          <span id="rosterFileStatus" class="upload-status">No file selected</span>
+        </div>
+        <label class="upload-btn">
+          Select Roster
+          <input type="file" id="rosterInput" accept=".xlsx" style="display: none;">
+        </label>
+      </div>
+
+      <div class="upload-card">
+        <div class="upload-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="18" x2="12" y2="12"></line>
+            <line x1="9" y1="15" x2="15" y2="15"></line>
+          </svg>
+        </div>
+        <div class="upload-content">
+          <h3>2. Marquee Attendance List</h3>
+          <p>Import wide marquee attendance workbook</p>
+          <span id="seatingFileStatus" class="upload-status">No file selected</span>
+        </div>
+        <label class="upload-btn">
+          Select Marquee Attendance
+          <input type="file" id="seatingInput" accept=".xlsx" style="display: none;">
+        </label>
+      </div>
+    </section>
+
+
+    <section class="controls" aria-label="Filter roster">
+      <div class="control control-search">
+        <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M21 21l-4.3-4.3"></path>
+        </svg>
+        <input type="search" id="searchInput" placeholder="Search by name or enrollment no."
+          aria-label="Search by name or enrollment number">
+      </div>
+
+      <div class="control">
+        <label for="deptFilter">Department</label>
+        <select id="deptFilter">
+          <option value="">All departments</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <label for="divFilter">Division</label>
+        <select id="divFilter">
+          <option value="">All divisions</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <label for="statusFilter">Attendance</label>
+        <select id="statusFilter">
+          <option value="">All students</option>
+          <option value="low">Below 75%</option>
+          <option value="mid">75&ndash;90%</option>
+          <option value="high">90%+</option>
+        </select>
+      </div>
+
+      <button id="resetFilters" class="text-btn" type="button">Reset</button>
+      <button id="copyList" class="text-btn" type="button" disabled>Copy list</button>
+      <button id="copyRolls" class="text-btn" type="button" disabled>Copy roll numbers</button>
+    </section>
+
+    <section class="table-section" aria-label="Student roster">
+      <div class="table-meta">
+        <span id="resultCount">&ndash;</span>
+        <span class="table-meta-divider" aria-hidden="true">&middot;</span>
+        <span>Sorted by <strong id="sortLabel">Name</strong></span>
+      </div>
+
+      <div class="table-wrap">
+        <table id="rosterTable">
+          <thead>
+            <tr>
+              <th scope="col">
+                <button class="th-sort" data-sort="roll_number" type="button">Roll No. <span class="sort-arrow"
+                    aria-hidden="true"></span></button>
+              </th>
+              <th scope="col">
+                <button class="th-sort" data-sort="name" type="button">Student <span class="sort-arrow"
+                    aria-hidden="true"></span></button>
+              </th>
+              <th scope="col">
+                <button class="th-sort" data-sort="enrollment_no" type="button">Enrollment No. <span class="sort-arrow"
+                    aria-hidden="true"></span></button>
+              </th>
+              <th scope="col">
+                <button class="th-sort" data-sort="department" type="button">Department <span class="sort-arrow"
+                    aria-hidden="true"></span></button>
+              </th>
+              <th scope="col">
+                <button class="th-sort" data-sort="division" type="button">Div <span class="sort-arrow"
+                    aria-hidden="true"></span></button>
+              </th>
+              <th scope="col">
+                <button class="th-sort" data-sort="present_count" type="button">Present <span class="sort-arrow"
+                    aria-hidden="true"></span></button>
+              </th>
+              <th scope="col">
+                <button class="th-sort" data-sort="attendance_pct" type="button">Attendance <span class="sort-arrow"
+                    aria-hidden="true"></span></button>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="rosterBody">
+            <!-- rows injected by app.js -->
+          </tbody>
+        </table>
+      </div>
+
+      <p id="emptyState" class="empty-state" hidden>No students match the current filters.</p>
+    </section>
+
+  </main>
+
+  <aside id="detailPanel" class="detail-panel" aria-label="Student detail" aria-hidden="true">
+    <div class="detail-panel-inner">
+      <button id="closeDetail" class="icon-btn detail-close" type="button" aria-label="Close student detail">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <div class="detail-header">
+        <h2 id="detailName">&ndash;</h2>
+        <p id="detailMeta" class="detail-meta">&ndash;</p>
+      </div>
+
+      <div class="detail-pct-row">
+        <div class="detail-pct-ring" id="detailRing">
+          <span id="detailPctValue">&ndash;</span>
+        </div>
+        <div class="detail-pct-info">
+          <span id="detailPresentOf">&ndash;</span>
+          <span class="detail-pct-label">sessions attended</span>
+        </div>
+      </div>
+
+      <div class="detail-counts">
+        <div class="detail-count-item detail-count--present">
+          <span class="detail-count-value" id="detailPresentCount">0</span>
+          <span class="detail-count-label">Present</span>
+        </div>
+        <div class="detail-count-item detail-count--absent">
+          <span class="detail-count-value" id="detailAbsentCount">0</span>
+          <span class="detail-count-label">Absent</span>
+        </div>
+        <div class="detail-count-item detail-count--leave">
+          <span class="detail-count-value" id="detailLeaveCount">0</span>
+          <span class="detail-count-label">Leave</span>
+        </div>
+      </div>
+
+      <h3 class="detail-subheading">Session history</h3>
+      <ul id="detailSessionList" class="session-list"></ul>
+    </div>
+  </aside>
+  <div id="detailOverlay" class="detail-overlay" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
